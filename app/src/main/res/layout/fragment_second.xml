@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_grey"
+    android:id="@+id/SecondFragmentParentView"
+    tools:context=".ui.SecondFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:padding="10dp"
+        android:background="@color/light_blue"
+        android:orientation="horizontal"
+        android:id="@+id/SecondFragmentSearchArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="File saya"
+            android:fontFamily="casual"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/SecondFragmentSearchInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_search_cardview"
+            android:hint="Search"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintVertical_bias="0.6" />
+
+        <ImageView
+            android:layout_marginTop="15dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/ic_baseline_search_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintVertical_bias="0.533" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <HorizontalScrollView
+        android:background="@color/light_grey"
+        android:scrollbars="none"
+        android:id="@+id/SecondFragmentDetailArea"
+        android:layout_below="@+id/SecondFragmentSearchArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/SecondFragmentAllFielFilter"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp">
+                <LinearLayout
+                    android:background="@color/invisible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+                    <TextView
+                        android:id="@+id/SecondFragmentAllFileDetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Semua file"
+                        android:textSize="16sp"
+                        android:drawableLeft="@drawable/ic_baseline_folder_copy_24"/>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/SecondFragmentPictureFilter"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp">
+                <LinearLayout
+                    android:background="@color/invisible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+                    <TextView
+                        android:id="@+id/SecondFragmentFotoDetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Foto"
+                        android:textSize="16sp"
+                        android:drawableLeft="@drawable/ic_baseline_image_24"/>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/SecondFragmentVideoFilter"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp">
+                <LinearLayout
+                    android:background="@color/invisible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+                    <TextView
+                        android:id="@+id/SecondFragmentVideoDetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Video"
+                        android:textSize="16sp"
+                        android:drawableLeft="@drawable/ic_baseline_video_library_24"/>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/SecondFragmentRecycleView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/SecondFragmentDetailArea">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <LinearLayout
+        android:id="@+id/SEcondFragmentEditFilenameArea"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:clickable="true"
+        android:visibility="gone"
+        android:background="@color/dark_opacity_25"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:paddingLeft="50dp"
+                android:paddingRight="50dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Edit Nama File"/>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/SEcondFragmentEditFilename"
+                    android:layout_width="150dp"
+                    android:inputType="textFilter"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghjikklmnopqrstuvwxyz1234567890_- "
+                    android:layout_height="wrap_content"/>
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <Button
+                        android:id="@+id/SecondFragmentSaveBtn"
+                        android:backgroundTint="@color/light_blue"
+                        android:textSize="12sp"
+                        android:textAllCaps="false"
+                        android:layout_width="75dp"
+                        android:layout_height="wrap_content"
+                        android:text="Simpan"/>
+                    <Button
+                        android:id="@+id/SecondFragmentCancelBtn"
+                        android:backgroundTint="@color/red"
+                        android:textSize="12sp"
+                        android:textAllCaps="false"
+                        android:layout_width="75dp"
+                        android:layout_height="wrap_content"
+                        android:text="Cancel"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+</RelativeLayout>
